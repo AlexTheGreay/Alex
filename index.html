@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #000;
+            --header-bg: #0073e6;
+            --nav-bg: #005bb5;
+            --nav-hover: #003d80;
+            --section-bg: white;
+            --footer-bg: #0073e6;
+        }
 
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --header-bg: #1e1e1e;
+            --nav-bg: #333;
+            --nav-hover: #555;
+            --section-bg: #222;
+            --footer-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: var(--nav-bg);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: var(--nav-hover);
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        section {
+            padding: 20px;
+            background: var(--section-bg);
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: var(--footer-bg);
+            color: white;
+            margin-top: 20px;
+        }
+
+        .toggle-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .toggle-button {
+            background: var(--nav-bg);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .toggle-button:hover {
+            background: var(--nav-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="toggle-container">
+        <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate developer and engineer working on exciting projects in technology and innovation.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've worked on:</p>
+            <ul>
+                <li>Project 1 - Description</li>
+                <li>Project 2 - Description</li>
+                <li>Project 3 - Description</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: example@example.com</p>
+            <p>LinkedIn: <a href="#" target="_blank">My LinkedIn</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        // Load user's preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+
+</body>
+</html>
