@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - AJF Portfolio</title>
+  <script>
+    // Immediately apply dark mode class BEFORE page loads
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.documentElement.classList.add('dark-mode');
+    }
+    </script>
+    
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -37,7 +44,7 @@
         </div>
       
         <!-- Contact Form -->
-        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+        <form id="contactForm" action="https://formspree.io/f/xaneaazw" method="POST" class="contact-form">
       
           <!-- Name Field with Icon -->
           <label for="name"><i class="fas fa-user"></i> Name:</label>

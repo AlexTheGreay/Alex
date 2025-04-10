@@ -401,6 +401,69 @@ details[open] summary ~ * {
       padding: 12px;
     }
   }
+
+
+  /* === MOBILE RESPONSIVE LAYOUT === */
+@media (max-width: 768px) {
+
+    /* Make nav links stack or scroll */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    nav a {
+      padding: 10px 8px;
+      font-size: 0.95em;
+    }
+  
+    /* Reduce container width and spacing */
+    .container {
+      width: 95%;
+      padding: 10px;
+    }
+  
+    /* Make reflection cards stack with less margin */
+    .reflection-card {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  
+    .reflection-img {
+      height: 140px;
+    }
+  
+    /* Style collapsible headers and coursework cards */
+    .collapsible-box {
+      padding: 15px;
+      font-size: 1.1em;
+    }
+  
+    .course-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .course-icon {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  
+    /* Contact form full width */
+    .contact-form {
+      padding: 15px;
+      width: 100%;
+    }
+  
+    .contact-form button {
+      width: 100%;
+      font-size: 1em;
+    }
+  
+  }
+  
   
   
 
