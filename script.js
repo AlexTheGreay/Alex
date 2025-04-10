@@ -14,8 +14,19 @@ document.querySelectorAll('details').forEach((detail) => {
     });
 });
 
+function toggleBox(element) {
+    const next = element.nextElementSibling;
+    if (next.classList.contains('hidden-section')) {
+        next.classList.remove('hidden-section');
+    } else {
+        next.classList.add('hidden-section');
+    }
+}
+
+
 
 // Load user's preference
 if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
 }
+
