@@ -6,7 +6,7 @@
     --nav-bg: #b50000;
     --nav-hover: #800000;
     --section-bg: white;
-    --footer-bg: #e60000;
+    --footer-bg: #510000;
 }
 
 .dark-mode {
@@ -99,4 +99,26 @@ footer {
     height: auto;
     display: block;
     margin: 0 auto 10px auto;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: var(--nav-bg);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background-color: var(--nav-hover);
+}
+
+object, embed {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-top: 15px;
 }
