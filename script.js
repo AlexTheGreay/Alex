@@ -30,7 +30,18 @@ if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
 }
 
+
+
 function toggleReflection(card) {
-    const content = card.querySelector('.reflection-content');
-    content.classList.toggle('hidden-section');
+    const allCards = document.querySelectorAll('.reflection-card');
+
+    // Close any other open cards
+    allCards.forEach(c => {
+        if (c !== card) {
+            c.classList.remove('expanded');
+        }
+    });
+
+    // Toggle the clicked one
+    card.classList.toggle('expanded');
 }
