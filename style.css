@@ -138,3 +138,34 @@ summary {
     font-size: 1.1em;
     margin-bottom: 8px;
 }
+
+.course-links {
+    margin-top: 10px;
+}
+
+.course-links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.course-links a i {
+    margin-right: 5px;
+    color: #d32f2f;
+}
+
+.course-links a:hover {
+    color: var(--nav-hover);
+}
+
+details[open] summary ~ * {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
