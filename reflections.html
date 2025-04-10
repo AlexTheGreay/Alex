@@ -32,24 +32,37 @@
 <div class="container">
     <section>
         <h2>Reflections</h2>
-      
-        <details class="course">
-          <summary><strong>EE 519: Control Systems</strong></summary>
-          <p>This course covered feedback control, stability, root locus, and state-space modeling.</p>
-          <p class="course-links">
-            <a href="files/EE519-Project.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Project Report</a>
-            <a href="https://github.com/yourusername/ee519" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-          </p>
-        </details>
-      
-        <details class="course">
-          <summary><strong>EE 445: Cellular Communication Networks</strong></summary>
-          <p>LTE/5G architecture, propagation models, and network simulation tools.</p>
-          <p class="course-links">
-            <a href="files/EE445-Slides.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
-            <a href="https://github.com/yourusername/ee445" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-          </p>
-        </details>
+
+<div class="reflection-grid">
+
+  <div class="reflection-card" onclick="toggleReflection(this)">
+    <img src="img/ee519.png" alt="EE 519" class="reflection-img">
+    <h3>EE 519 – Control Systems</h3>
+    <p class="summary">Learned modeling, stability, and control design. Hands-on simulation with MATLAB and Simulink.</p>
+    <div class="reflection-content hidden-section">
+      <p>This course deepened my understanding of feedback systems. I gained valuable experience working with root locus and state-space techniques, applying them to real-world examples.</p>
+      <p>
+        <a href="files/EE519-Project.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Project Report</a>
+        <a href="https://github.com/yourusername/ee519" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="reflection-card" onclick="toggleReflection(this)">
+    <img src="img/ee445.png" alt="EE 445" class="reflection-img">
+    <h3>EE 445 – Cellular Communication</h3>
+    <p class="summary">Explored 5G architecture, scheduling, and network behavior through simulations and modeling.</p>
+    <div class="reflection-content hidden-section">
+      <p>This course showed me the power of cellular systems and radio modeling. I enjoyed simulating LTE and 5G performance under varying traffic loads.</p>
+      <p>
+        <a href="files/EE445-Slides.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
+        <a href="https://github.com/yourusername/ee445" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
       </section>
         
 </div>
