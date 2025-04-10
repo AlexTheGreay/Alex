@@ -28,14 +28,30 @@
 </div>
 
 <div class="container">
-  <section>
-    <h2>Contact</h2>
-    <p>You can reach me via email or connect with me on LinkedIn:</p>
-    <ul>
-      <li>Email: example@example.com</li>
-      <li>LinkedIn: <a href="#" target="_blank">linkedin.com/in/your-profile</a></li>
-    </ul>
-  </section>
+    <section>
+        <h2>Contact Me</h2>
+      
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/xaneaazw" method="POST" class="contact-form">
+      
+          <!-- Name Field -->
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+      
+          <!-- Email Field -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="_replyto" required>
+      
+          <!-- Message Field -->
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+      
+          <!-- Submit Button -->
+          <button type="submit">Send Message</button>
+      
+        </form>
+      </section>
+      
 </div>
 
 <footer>
