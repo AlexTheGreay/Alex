@@ -30,3 +30,7 @@ if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
 }
 
+function toggleReflection(card) {
+    const content = card.querySelector('.reflection-content');
+    content.classList.toggle('hidden-section');
+}
