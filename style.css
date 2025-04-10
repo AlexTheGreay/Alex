@@ -342,3 +342,28 @@ details[open] summary ~ * {
     background-color: var(--nav-hover);
   }
   
+
+  /* === Success Message Styling === */
+#success-message {
+    text-align: center;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .hidden-section {
+    display: none;
+  }
+  
+  /* === Icon Styling for Labels === */
+  .contact-form label i {
+    margin-right: 8px;
+    color: var(--nav-hover);
+  }
+
+  
+
+  

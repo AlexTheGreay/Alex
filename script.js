@@ -45,3 +45,31 @@ function toggleReflection(card) {
     // Toggle the clicked one
     card.classList.toggle('expanded');
 }
+
+
+// Handle Formspree success message without reloading the page
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("success-message");
+  
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Prevent page reload
+  
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+  
+        if (response.ok) {
+          form.reset(); // Clear the form
+          successMessage.classList.remove("hidden-section"); // Show success
+        } else {
+          alert("There was a problem submitting your message. Please try again.");
+        }
+      });
+    }
+  });
+  
