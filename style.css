@@ -3,10 +3,10 @@
     --bg-color: #f4f4f4;
     --text-color: #000;
     --header-bg: #830000;
-    --nav-bg: #005bb5;
-    --nav-hover: #003d80;
+    --nav-bg: #b50000;
+    --nav-hover: #800000;
     --section-bg: white;
-    --footer-bg: #0073e6;
+    --footer-bg: #e60000;
 }
 
 .dark-mode {
