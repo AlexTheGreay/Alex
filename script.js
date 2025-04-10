@@ -73,3 +73,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
+
+
+  // Wait until the page fully loads
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("success-message");
+    const errorMessage = document.getElementById("error-message");
+    const loadingSpinner = document.getElementById("loading-spinner");
+  
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Stop the page from reloading
+  
+        // Hide previous messages
+        successMessage.classList.add("hidden-section");
+        errorMessage.classList.add("hidden-section");
+  
+        // Show loading spinner
+        loadingSpinner.classList.remove("hidden-section");
+  
+        const formData = new FormData(form);
+  
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+  
+          // Hide loading spinner
+          loadingSpinner.classList.add("hidden-section");
+  
+          if (response.ok) {
+            form.reset(); // Clear form fields
+            successMessage.classList.remove("hidden-section"); // Show thank you
+          } else {
+            errorMessage.classList.remove("hidden-section"); // Show error message
+          }
+        } catch (error) {
+          loadingSpinner.classList.add("hidden-section");
+          errorMessage.classList.remove("hidden-section"); // Show error on fail
+        }
+      });
+    }
+  });
+  
