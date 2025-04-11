@@ -266,12 +266,13 @@ details[open] summary ~ * {
   
   .reflection-img {
     width: 100%;
+    max-width: 800px;         /* ✅ Set a reasonable max width */
     height: 120px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
     text-align: center;
-
+    margin: 0 auto 10px auto; /* ✅ Center the image */
     height: auto;
     display: block;
   }
@@ -566,6 +567,7 @@ details[open] summary ~ * {
   display: block;
   margin: 20px auto;
   max-width: 90%;
+  max-width: 800px;
   height: auto;
   border-radius: 10px;
 }
@@ -666,3 +668,11 @@ details[open] summary ~ * {
 .citation-list a:hover {
   color: var(--nav-hover);
 }
+
+.prof-link i {
+  margin-left: 4px;
+  font-size: 0.85em;
+  color: var(--nav-hover);
+}
+
+
