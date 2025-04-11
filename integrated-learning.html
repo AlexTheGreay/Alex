@@ -5,25 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Integrated Learning - AJF Portfolio</title>
   <script>
-    // Immediately apply dark mode class BEFORE page loads
     if (localStorage.getItem('darkMode') === 'true') {
       document.documentElement.classList.add('dark-mode');
     }
-    </script>
-    
+  </script>
+
   <link rel="stylesheet" href="./style.css" />
+  <style>
+    .red-banner {
+      width: 100%;
+      background-color: #b71c1c;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .experience-section {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      padding-bottom: 40px;
+      align-items: center;
+    }
+
+    .experience-header img {
+      max-width: 600px;
+      width: 100%;
+      object-fit: contain;
+      margin-bottom: -30px;
+    }
+
+    .experience-bubble {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: nowrap;
+      gap: 40px;
+      max-width: 1100px;
+    }
+
+    .experience-bubble.left {
+      flex-direction: row;
+    }
+
+    .experience-bubble.right {
+      flex-direction: row-reverse;
+    }
+
+    .experience-bubble img.bubble-img {
+      width: 50%;
+      height: auto;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .bubble-text {
+      flex: 1;
+      border-left: 5px solid #b71c1c;
+      background-color: var(--section-bg);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bubble-text h3 {
+      margin-top: 0;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Alexander J Francisco</h1>
+  <h1>Alexander J Francisco</h1>
 </header>
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="projects.html">Projects</a>
   <a href="reflections.html">Reflections</a>
-  <a href="integrated-learning.html">Integrated Learning</a>
+  <a href="integrated-learning.html">Integrated Learning / Projects</a>
   <a href="resume.html">Resume/CV</a>
   <a href="coursework.html">Coursework</a>
   <a href="citations.html">Citations</a>
@@ -34,10 +100,70 @@
   <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 </div>
 
+<div class="red-banner">Integrated Learning</div>
+
 <div class="container">
   <section>
-    <h2>Integrated Learning</h2>
     <p>This section highlights how I have applied theoretical knowledge to real-world scenarios through research, internships, and interdisciplinary projects.</p>
+
+    <div class="experience-section">
+
+      <div class="experience-header"><img src="proj/fisherprice.jfif" alt="Fisher Price Logo"></div>
+      <div class="experience-bubble right">
+        <img class="bubble-img" src="proj/fp.png" alt="Fisher Price Debug Tool">
+        <div class="bubble-text">
+          <h3>Fisher Price: Debug Tool</h3>
+          <p>As part of the Thomas the Tank Engine team, I developed a scanning debug tool for the embedded systems inside the toys. This tool dramatically simplified debugging and helped QA technicians isolate errors in the toy firmware.</p>
+        </div>
+      </div>
+
+      <div class="experience-header"><img src="proj/moogaircraft.png" alt="Moog Logo"></div>
+      <div class="experience-bubble left">
+        <img class="bubble-img" src="proj/Seahawk2.jpg" alt="Moog Helicopter">
+        <div class="bubble-text">
+          <h3>Moog Inc. – Helicopter Power Modules</h3>
+          <p>While the specifics are under NDA, I worked on modules used in Black Hawk and Sea Hawk helicopters. It was a proud moment to contribute engineering expertise to platforms of this scale and national importance. Tasks included simulation, layout review, and lab validation.</p>
+        </div>
+      </div>
+
+      <div class="experience-header"><img src="proj/tapeconbanner.png" alt="Tapecon Logo"></div>
+      <div class="experience-bubble right">
+        <img class="bubble-img" src="proj/tpcn.png" alt="Tapecon Circuit">
+        <div class="bubble-text">
+          <h3>Tapecon – Flexible Hybrid Electronics</h3>
+          <p>I joined Tapecon during their push to become a leader in FHE (Flexible Hybrid Electronics). I designed circuits, tested conductive inks, and helped onboard new manufacturing equipment including a large-scale CNC laser system. Weekly technical presentations kept my designs aligned with product goals.</p>
+        </div>
+      </div>
+
+      <div class="experience-bubble left">
+        <img class="bubble-img" src="proj/tpcn2.png" alt="Breadboard">
+        <div class="bubble-text">
+          <h3>Circuit Prototyping</h3>
+          <p>I prototyped dozens of analog and digital circuits for Tapecon, including logic gates, oscillators, and sensor interfaces. My skills in breadboarding, simulation, and CAD proved crucial for rapid iteration. I also worked on printing these designs on flexible substrates.</p>
+        </div>
+      </div>
+
+      <div class="experience-bubble right">
+        <img class="bubble-img" src="proj/alexserver.png" alt="NAS Build">
+        <div class="bubble-text">
+          <h3>Home Server Project</h3>
+          <p>I designed and built a custom Network Attached Storage system using an IBM System x3650 M3 server. This project challenged my understanding of hardware interfaces, RAID configurations, and Linux-based file system management. It has become an essential part of my home lab.</p>
+        </div>
+      </div>
+
+      <!-- 🔻 TEMPLATE: Copy below block to add more experiences -->
+      <!--
+      <div class="experience-header"><img src="proj/companylogo.png" alt="Company Logo"></div>
+      <div class="experience-bubble left">
+        <img class="bubble-img" src="proj/yourimage.jpg" alt="Your Project">
+        <div class="bubble-text">
+          <h3>Company / Project Title</h3>
+          <p>Short description of what you did, what you learned, and any tools or skills used.</p>
+        </div>
+      </div>
+      -->
+
+    </div>
   </section>
 </div>
 

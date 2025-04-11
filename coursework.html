@@ -5,25 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coursework - AJF Portfolio</title>
   <script>
-    // Immediately apply dark mode class BEFORE page loads
     if (localStorage.getItem('darkMode') === 'true') {
       document.documentElement.classList.add('dark-mode');
     }
-    </script>
-    
+  </script>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
 <header>
-    <h1>Alexander J Francisco</h1>
+  <h1>Alexander J Francisco</h1>
 </header>
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="projects.html">Projects</a>
   <a href="reflections.html">Reflections</a>
-  <a href="integrated-learning.html">Integrated Learning</a>
+  <a href="integrated-learning.html">Integrated Learning / Projects</a>
   <a href="resume.html">Resume/CV</a>
   <a href="coursework.html">Coursework</a>
   <a href="citations.html">Citations</a>
@@ -35,46 +32,82 @@
 </div>
 
 <div class="container">
-    <section>
-        <h2>My Coursework</h2>
-      
-        <!-- Undergrad Section -->
-        <div class="collapsible-box" onclick="toggleBox(this)">
-          <h3>Undergraduate Courses</h3>
-        </div>
-        <div class="course-grid hidden-section">
-          <a href="https://www.buffalo.edu/courses/ee445" class="course-card">
-            <img src="Test1.png" alt="EE 445" class="course-icon" />
-            <div>
-              <h3>EE 445 – Cellular Communication</h3>
-              <p>LTE/5G, propagation, handoffs, and simulation work.</p>
-            </div>
-          </a>
-        </div>
-      
-        <!-- Grad Section -->
-        <div class="collapsible-box" onclick="toggleBox(this)">
-          <h3>Graduate Courses</h3>
-        </div>
-        <div class="course-grid hidden-section">
-          <a href="https://www.buffalo.edu/courses/ee519" class="course-card">
-            <img src="Test1.png" alt="EE 519" class="course-icon" />
-            <div>
-              <h3>EE 519 – Control Systems</h3>
-              <p>Modeling, root locus, and state-space design.</p>
-            </div>
-          </a>
-      
-          <a href="https://www.buffalo.edu/courses/ee550" class="course-card">
-            <img src="Test2.png" alt="EE 550" class="course-icon" />
-            <div>
-              <h3>EE 550 – Digital VLSI</h3>
-              <p>CMOS, Verilog, and CAD tools.</p>
-            </div>
-          </a>
-        </div>
-      </section>
-      
+  <section>
+    <h2>My Coursework</h2>
+    <p class="gpa-summary"><strong>Graduate GPA:</strong> 4.000 &nbsp; | &nbsp; <strong>Undergraduate GPA:</strong> 3.973</p>
+
+    <!-- 📘 Graduate Section -->
+    <div class="collapsible-box" onclick="toggleBox(this)">
+      <h3>Graduate Courses</h3>
+    </div>
+    <div class="course-grid hidden-section">
+      <div class="course-card">🎓 EE 541 – Machine Learning over Wireless Edge Networks (A)</div>
+      <div class="course-card">🔬 EE 553 – Microelectronic Fabrication Lab (A)</div>
+      <div class="course-card">📐 EE 591 – Analog Integrated Circuits (A)</div>
+      <div class="course-card">⚙️ EE 519 – Industrial Control Systems (A)</div>
+      <div class="course-card">📡 EE 545 – Principles of Cellular Communication Networks (A)</div>
+      <div class="course-card">💾 EE 550 – Digital Integrated Circuits (A)</div>
+      <div class="course-card">🧠 EE 526 – Wearable & Implantable Sensors (A)</div>
+      <div class="course-card">📊 IE 512 – Decision Analysis (A)</div>
+      <div class="course-card">☀️ EE 550 – Photovoltaic Technology and Applications (IP)</div>
+      <div class="course-card">🔋 EE 559 – Control and Applications of Power Electronics (IP)</div>
+      <div class="course-card">📝 EE 616 – Technical Synthesis and Communication (IP)</div>
+    </div>
+
+    <!-- 🎵 Music Courses -->
+    <div class="collapsible-box" onclick="toggleBox(this)">
+      <h3>Music Courses</h3>
+    </div>
+    <div class="course-grid hidden-section">
+      <div class="course-card">🎼 MUS 105 – Theory, Analysis & Aural Skills I (A)</div>
+      <div class="course-card">🎻 MUS 214 – Music History Survey 2 (A)</div>
+      <div class="course-card">🎺 MUS 338 – UB Symphony Orchestra (A, B+)</div>
+      <div class="course-card">🎤 MUS 341 – UB Chamber Singers (A, IP)</div>
+      <div class="course-card">🎶 MUS 351 – University Choir (A)</div>
+      <div class="course-card">🎹 MUS 464 – Organ (A, IP)</div>
+      <div class="course-card">🎹 MUS 563 – Organ (A)</div>
+      <div class="course-card">🎹 MUS 163 – Organ (A)</div>
+    </div>
+
+    <!-- 📚 General Education -->
+    <div class="collapsible-box" onclick="toggleBox(this)">
+      <h3>General Education & Core Curriculum</h3>
+    </div>
+    <div class="course-grid hidden-section">
+      <div class="course-card">🌍 APY 106 – Intro to Cultural Anthropology (A)</div>
+      <div class="course-card">🖥️ DMS 220 – Machines, Codes and Cultures (A)</div>
+      <div class="course-card">🧭 EAS 199 – UB Seminar: Engineering Principles (A)</div>
+      <div class="course-card">🌐 EAS 202 – Impact on Society (A)</div>
+      <div class="course-card">📈 ECO 182 – Intro to Microeconomics (A)</div>
+      <div class="course-card">📜 HIS 293 – The Second World War (A−)</div>
+      <div class="course-card">📘 UBC 399 – UB Curriculum Capstone (A)</div>
+      <div class="course-card">📘 EAS 360 – STEM Communications (A)</div>
+    </div>
+
+    <!-- 💡 Undergraduate EE Courses -->
+    <div class="collapsible-box" onclick="toggleBox(this)">
+      <h3>Electrical Engineering Undergraduate Courses</h3>
+    </div>
+    <div class="course-grid hidden-section">
+      <div class="course-card">💡 EE 178 – Digital Principles (A)</div>
+      <div class="course-card">🔌 EE 202 – Circuit Analysis (A)</div>
+      <div class="course-card">📡 EE 205 – Signals and Systems (A)</div>
+      <div class="course-card">📊 EE 305 – Applied Probability (A−)</div>
+      <div class="course-card">📟 EE 310 – Electronic Devices and Circuits I (A)</div>
+      <div class="course-card">📟 EE 311 – Electronic Devices and Circuits II (A)</div>
+      <div class="course-card">📶 EE 324 – Applied Electromagnetics (A)</div>
+      <div class="course-card">🔋 EE 336 – Fundamentals of Energy Systems (A)</div>
+      <div class="course-card">🧪 EE 352 – Intro to Electronics Lab (A)</div>
+      <div class="course-card">📈 EE 353 – Electronic Circuits (A)</div>
+      <div class="course-card">🧩 EE 379 – Embedded Systems and Applications (A)</div>
+      <div class="course-card">📻 EE 383 – Communications Systems I (A)</div>
+      <div class="course-card">🧠 EE 408 – Senior Seminar (A)</div>
+      <div class="course-card">⚡ EE 476 – High Voltage Engineering (A)</div>
+      <div class="course-card">🔠 EE 478 – HDL Digital Design (A)</div>
+      <div class="course-card">🛠️ EE 494 – Senior Capstone Design Project (A)</div>
+      <div class="course-card">👨‍💼 EE 496 – EE Internship (A)</div>
+    </div>
+  </section>
 </div>
 
 <footer>
