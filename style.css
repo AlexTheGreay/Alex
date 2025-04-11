@@ -266,11 +266,17 @@ details[open] summary ~ * {
   
   .reflection-img {
     width: 100%;
-    height: 160px;
+    height: 120px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 10px;
+    text-align: center;
+
+    height: auto;
+    display: block;
   }
+
+
   
   .summary {
     font-style: italic;
@@ -426,7 +432,7 @@ details[open] summary ~ * {
     }
   
     .reflection-img {
-      height: 140px;
+      height: 260px;
     }
   
     /* Style collapsible headers and coursework cards */
@@ -574,4 +580,89 @@ details[open] summary ~ * {
 
 .center-text {
   text-align: center;
+}
+
+.citations-section {
+  background-color: var(--section-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin: 30px 0;
+}
+
+.citations-section h2 {
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.citation-list {
+  padding-left: 20px;
+  list-style-type: decimal;
+}
+
+.citation-list li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.citation-list a {
+  color: var(--nav-bg);
+  text-decoration: underline;
+}
+
+.citation-list a:hover {
+  color: var(--nav-hover);
+}
+
+
+
+
+
+
+
+
+
+
+
+.citations-section {
+  background-color: var(--section-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin: 40px auto;
+}
+
+.citations-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.citation-box {
+  border-left: 4px solid var(--nav-bg);
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+}
+
+.citation-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.citation-list li {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.citation-list a {
+  color: var(--nav-bg);
+  text-decoration: underline;
+}
+
+.citation-list a:hover {
+  color: var(--nav-hover);
 }
