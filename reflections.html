@@ -52,6 +52,49 @@
                 <p>I registered for EE 519 while working at Moog, Inc. for the summer. Many of my colleagues emphasized the importance of control systems in engineering, especially in applications such as powering motors, aircraft systems, and automation. This encouraged me to explore the subject further. At the time, I had little prior exposure to control theory, and I was unaware that it would become one of the most intellectually stimulating topics I have encountered as a graduate student. This course began one of my greatest recent passions, and perhaps a career.</p>
                 <p>Throughout the course, I gained a deep understanding of closed-loop control, stability analysis, and system dynamics. I was particularly fascinated by the practical applications of control systems in real-world engineering problems. The rigorous homework assignments and project papers challenged me to apply theoretical concepts, reinforcing my learning and pushing me to think critically about complex problems.</p>
                 <p>There are some classes where you can sit back, relax, and occasionally provide input when needed. Then, there are other classes that require you to be fully engaged, giving your undivided attention for every minute of the lecture. This course fell into the latter category. Professor Luis Herrera delivered content at a fast pace, requiring students to stay sharp and proactive to keep up with the monsoon of information coming their way. However, this intensity was precisely what made the class rewarding.</p>
+
+
+
+
+
+
+              <!-- 👇 Insert the entire cruise control simulation game BELOW your written content: -->
+    <!-- 🚗 Cruise Control Simulation Game -->
+    <div class="cruise-control-container">
+      <div class="car-scene">
+        <img src="img/CarRed.png" alt="Car" class="car-img">
+        <div class="road"></div>
+        <div id="tree-container"></div>
+        <div id="speed-limit-container"></div>
+      </div>
+
+      <div class="controls">
+        <label for="speedSlider">Target Speed: <span id="targetSpeed">50</span> mph</label>
+        <input type="range" id="speedSlider" min="0" max="100" value="50">
+        <button onclick="applyGas()">⛽ Gas</button>
+        <button onclick="applyBrake()">🛑 Brake</button>
+      </div>
+
+      <div class="speedometer">
+        <h3>Speedometer</h3>
+        <p><strong>Speed:</strong> <span id="speed">0</span> mph</p>
+      </div>
+
+      <!-- 📈 Speed vs Time Graph -->
+      <canvas id="speedGraph" width="400" height="200"></canvas>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
                 <p>This course taught me two key lessons: first, as an engineer, adaptability and the ability to quickly grasp new topics are critical. I had to push myself to stay ahead, absorb new concepts, and apply them. Second, the course filled gaps in my prior knowledge—while many undergraduate circuits courses briefly touch on closed-loop control, they rarely explore its mathematical foundation in depth. EE 519 bridged that gap by providing a strong theoretical and practical understanding of control systems.</p>
                 <p>One of the most valuable aspects of the course was its integration of linear algebra concepts, which Professor Herrera reinforced alongside control theory. This helped me solidify my understanding of mathematical models used in system analysis. The combination of control theory and mathematics provided a more holistic view of how systems work.</p>
 

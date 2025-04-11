@@ -237,41 +237,28 @@ details[open] summary ~ * {
 
 
 
-
 .reflection-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-          /* ✅ ADD THIS BELOW */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 90%;
-width: 100%;
+  margin: auto;
+}
 
-  }
-  
-  .reflection-card {
-    background-color: var(--section-bg);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: all 0.4s ease;
-    cursor: pointer;
-    position: relative;
-  
-    /* ✅ New: allow card to resize with content */
-    overflow: visible;
-    height: auto;
-    max-height: fit-content;
-
-      /* ✅ ADD THIS BELOW */
+.reflection-card {
+  width: 100%;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  }
-  
+  margin: auto;
+  background-color: var(--section-bg);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
   .reflection-card.expanded {
     max-height: fit-content;
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
@@ -689,3 +676,39 @@ width: 100%;
 }
 
 
+
+
+
+
+
+
+/*The game
+.home-graph {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: var(--section-bg);
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#homeSpeedGraph {
+  width: 100%;
+}
+*/
+
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--nav-bg);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: var(--nav-hover);
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cruise Control Simulation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+    .cruise-control-container {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+    .car-scene {
+      position: relative;
+      height: 120px;
+      background-color: #e0e0e0;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .car-img {
+      position: absolute;
+      bottom: 10px;
+      left: 30px;
+      height: 60px;
+      z-index: 2;
+    }
+    .road {
+      position: absolute;
+      bottom: 0;
+      height: 20px;
+      width: 100%;
+      background: #555;
+      z-index: 1;
+    }
+    #tree-container img, #speed-limit-container img {
+      position: absolute;
+      height: 70px;
+      bottom: 20px;
+      z-index: 1;
+    }
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .speedometer {
+      margin-top: 10px;
+    }
+    #speedGraph {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+      display: block;
+    }
+    .eigenvalue-inputs {
+      margin-top: 10px;
+    }
+    .eigenvalue-inputs input {
+      width: 60px;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cruise-control-container">
+    <h2>Cruise Control Simulation</h2>
+    <div class="car-scene">
+      <img src="img/CarRed.png" alt="Car" class="car-img">
+      <div class="road"></div>
+      <div id="tree-container"></div>
+      <div id="speed-limit-container"></div>
+    </div>
+
+    <div class="controls">
+      <label for="speedSlider">Target Speed: <span id="targetSpeed">20</span> mph</label>
+      <input type="range" id="speedSlider" min="0" max="100" value="20">
+      <button id="gasBtn">⛽ Gas</button>
+      <button id="brakeBtn">🛑 Brake</button>
+    </div>
+
+    <div class="eigenvalue-inputs">
+      Set Eigenvalues (Real):
+      λ₁: <input type="number" id="lambda1" value="-0.5" step="0.1">
+      λ₂: <input type="number" id="lambda2" value="-1" step="0.1">
+      <button onclick="updateGainsFromEigenvalues()">Apply</button>
+    </div>
+
+    <div class="speedometer">
+      <h3>Speedometer</h3>
+      <p><strong>Speed:</strong> <span id="speed">0</span> mph</p>
+    </div>
+
+    <canvas id="speedGraph" width="400" height="200"></canvas>
+  </div>
+
+  <script>
+    let targetSpeed = 20;
+    let currentSpeed = 0;
+    let integral = 0;
+    let gasPressed = false;
+    let brakePressed = false;
+
+    let lambda1 = -0.5;
+    let lambda2 = -1;
+    let Kp = -(lambda1 + lambda2);
+    let Ki = lambda1 * lambda2;
+
+    const speedEl = document.getElementById('speed');
+    const targetEl = document.getElementById('targetSpeed');
+    const slider = document.getElementById('speedSlider');
+    const treeContainer = document.getElementById('tree-container');
+    const signContainer = document.getElementById('speed-limit-container');
+
+    const ctx = document.getElementById('speedGraph').getContext('2d');
+    const speedData = {
+      labels: [],
+      datasets: [
+        { label: 'Current Speed (mph)', data: [], borderColor: 'red', tension: 0.2 },
+        { label: 'Target Speed (mph)', data: [], borderDash: [5,5], borderColor: 'blue', pointRadius: 0 }
+      ]
+    };
+    const speedChart = new Chart(ctx, {
+      type: 'line',
+      data: speedData,
+      options: {
+        responsive: true,
+        animation: false,
+        scales: { y: { suggestedMin: 0, suggestedMax: 100 } }
+      }
+    });
+
+    slider.addEventListener('input', () => {
+      targetSpeed = parseInt(slider.value);
+      targetEl.textContent = targetSpeed;
+    });
+
+    function updateGainsFromEigenvalues() {
+      lambda1 = parseFloat(document.getElementById('lambda1').value);
+      lambda2 = parseFloat(document.getElementById('lambda2').value);
+      Kp = -(lambda1 + lambda2);
+      Ki = lambda1 * lambda2;
+    }
+
+    document.getElementById('gasBtn').addEventListener('mousedown', () => gasPressed = true);
+    document.getElementById('gasBtn').addEventListener('mouseup', () => gasPressed = false);
+    document.getElementById('brakeBtn').addEventListener('mousedown', () => brakePressed = true);
+    document.getElementById('brakeBtn').addEventListener('mouseup', () => brakePressed = false);
+    document.addEventListener('mouseup', () => { gasPressed = false; brakePressed = false });
+
+    function animateObjects() {
+      if (++treeCounter % 10 === 0) {
+        const tree = document.createElement('img');
+        tree.src = 'img/tree.png';
+        tree.style.left = '100%';
+        treeContainer.appendChild(tree);
+        if (treeCounter % 30 === 0) {
+          const sign = document.createElement('img');
+          sign.src = 'img/speedLimit.png';
+          sign.style.left = '100%';
+          signContainer.appendChild(sign);
+        }
+      }
+      [...treeContainer.querySelectorAll('img')].forEach(tree => {
+        const left = parseFloat(tree.style.left);
+        tree.style.left = (left - currentSpeed * 0.1) + '%'; // Slowed visual speed
+        if (left < -10) tree.remove();
+      });
+      [...signContainer.querySelectorAll('img')].forEach(sign => {
+        const left = parseFloat(sign.style.left);
+        sign.style.left = (left - currentSpeed * 0.1) + '%'; // Slowed visual speed
+        if (left < -10) sign.remove();
+      });
+    }
+
+    function updateSystem() {
+      if (!gasPressed && !brakePressed) {
+        const error = targetSpeed - currentSpeed;
+        integral += error;
+        currentSpeed += Kp * error + Ki * integral;
+      } else {
+        if (gasPressed) currentSpeed += 0.5;
+        if (brakePressed) currentSpeed -= 1.5;
+      }
+      if (currentSpeed < 0) currentSpeed = 0;
+      speedEl.textContent = currentSpeed.toFixed(1);
+      speedData.labels.push('');
+      speedData.datasets[0].data.push(currentSpeed);
+      speedData.datasets[1].data.push(targetSpeed);
+      if (speedData.labels.length > 100) {
+        speedData.labels.shift();
+        speedData.datasets[0].data.shift();
+        speedData.datasets[1].data.shift();
+      }
+      speedChart.update();
+      animateObjects();
+    }
+    let treeCounter = 0;
+    setInterval(updateSystem, 100);
+  </script>
+</body>
+</html>
