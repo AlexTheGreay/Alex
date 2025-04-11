@@ -28,14 +28,14 @@ function toggleBox(element) {
 
 // === 4. REFLECTION CARD EXPANSION ===
 function toggleReflection(card) {
+  console.log("Card clicked:", card); // 👈 Add this for debug
+
   const allCards = document.querySelectorAll('.reflection-card');
 
-  // Collapse all others
   allCards.forEach(c => {
-      if (c !== card) c.classList.remove('expanded');
+    if (c !== card) c.classList.remove('expanded');
   });
 
-  // Toggle selected card
   card.classList.toggle('expanded');
 }
 

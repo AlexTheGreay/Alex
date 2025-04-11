@@ -250,14 +250,17 @@ details[open] summary ~ * {
     border-radius: 15px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     transition: all 0.4s ease;
-    overflow: hidden;
     cursor: pointer;
     position: relative;
-    max-height: 300px;
+  
+    /* ✅ New: allow card to resize with content */
+    overflow: visible;
+    height: auto;
+    max-height: fit-content;
   }
   
   .reflection-card.expanded {
-    max-height: 1000px;
+    max-height: fit-content;
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   }
   
@@ -274,20 +277,12 @@ details[open] summary ~ * {
     font-size: 0.95em;
   }
   
-  .reflection-content {
-    opacity: 0;
-    height: 0;
-    transition: opacity 0.3s ease, height 0.3s ease;
-    overflow: hidden;
-    margin-top: 0;
-  }
   
-  .reflection-card.expanded .reflection-content {
-    opacity: 1;
-    height: auto;
-    margin-top: 15px;
-  }
-  
+/* Only lift when hovered */
+  .reflection-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
 
 
   /* ==== CONTACT FORM STYLING ==== */
@@ -513,3 +508,70 @@ details[open] summary ~ * {
     color: var(--nav-hover);
   }
   
+
+  /* === Top-Right Floating Box Link === */
+.corner-link {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 15px;
+  border: 2px solid #000000; /* Blue outline */
+  border-radius: 10px;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: #007bff; /* Blue fill */
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  
+}
+
+.corner-link:hover {
+  transform: translateY(-2px);
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3;
+  color: var(--section-bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.reflection-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: max-height 0.6s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.reflection-card.expanded .reflection-content {
+  max-height: 5000px;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.reflection-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.center-img {
+  display: block;
+  margin: 20px auto;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.small-center-img {
+  display: block;
+  margin: 20px auto;
+  max-width: 60%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.center-text {
+  text-align: center;
+}

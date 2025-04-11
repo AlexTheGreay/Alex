@@ -40,33 +40,77 @@
     <section>
         <h2>Reflections</h2>
 
-<div class="reflection-grid">
+        <div class="reflection-grid">
 
-  <div class="reflection-card" onclick="toggleReflection(this)">
-    <img src="img/ee519.png" alt="EE 519" class="reflection-img">
-    <h3>EE 519 – Control Systems</h3>
-    <p class="summary">Learned modeling, stability, and control design. Hands-on simulation with MATLAB and Simulink.</p>
-    <div class="reflection-content hidden-section">
-      <p>This course deepened my understanding of feedback systems. I gained valuable experience working with root locus and state-space techniques, applying them to real-world examples.</p>
-      <p>
-        <a href="files/EE519-Project.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Project Report</a>
-        <a href="https://github.com/yourusername/ee519" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-      </p>
-    </div>
-  </div>
-
-  <div class="reflection-card" onclick="toggleReflection(this)">
-    <img src="img/ee445.png" alt="EE 445" class="reflection-img">
-    <h3>EE 445 – Cellular Communication</h3>
-    <p class="summary">Explored 5G architecture, scheduling, and network behavior through simulations and modeling.</p>
-    <div class="reflection-content hidden-section">
-      <p>This course showed me the power of cellular systems and radio modeling. I enjoyed simulating LTE and 5G performance under varying traffic loads.</p>
-      <p>
-        <a href="files/EE445-Slides.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Slides</a>
-        <a href="https://github.com/yourusername/ee445" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-      </p>
-    </div>
-  </div>
+          <!-- EE 541 – Machine Learning and Wireless Edge Networks -->
+          <div class="reflection-card" onclick="toggleReflection(this)">
+            <img src="img/placeholder-ml.png" alt="EE 541" class="reflection-img">
+            <h3>EE 541: Special Topics – Machine Learning and Wireless Edge Networks</h3>
+            <p class="summary">First exposure to machine learning through reading real research and applications in wireless networks.</p>
+            <div class="reflection-content">
+              <p>Taught by Professor <strong>Seyyedali Hosseinalipour</strong><br>
+                Professor Ali’s classes are my favorite. They are packed with material, interesting, and known to be overwhelming. I enrolled in this course because I knew that every lecture would be packed with valuable and rich information. If nothing else, I would leave this course having learned something new, (and perhaps one of his prized protein shakes). Professor Ali selected some of the latest scientific papers for us to read and discuss in class on the topic of Machine learning and wireless edge networks. It was the first course I have ever taken on machine learning, and the first course I had taken that actively used the latest research in a topic.</p>
+                <p>
+                  At first, I had little interest in the course topic. "Machine learning" sounded like a bunch of computer science concepts that had no relevance to me as an electrical engineer. I was wrong! My biggest concern was that I lacked the background knowledge, or wouldn’t be that interested in ML, but neither of these fears materialized. The reality is machine learning is an integral part of what many engineers do today. The applications go far beyond computer science. I learned the role ML plays in communications technology today. 
+                </p>
+              <p class="center-text"><img src="img/figure1.png" alt="Figure 1 - Wireless network diagram" class="small-center-img"><strong>Figure 1: Wireless Network Depiction</strong> </p>
+              <p>Throughout this course, I was introduced to a vast network infrastructure that enables modern wireless communication. I gained insight into base stations, wireless data transfer, and how <strong>machine learning can be integrated into wireless networks.</strong> A key takeaway was understanding the role of machine learning in optimizing communication protocols and dynamically adjusting system parameters. For example: Machine learning can be used to set a policy for data uplink and downlink. The problem is devices like our phones have limited energy, and need to send and receive transmissions in an energy conscious manner. Machine learning can be used to monitor the performance of our devices and their communication, come up with adjustments, and integrate those adjustments in real time to optimize the performance of the network.</p>
+              <p>In this class we recreated simple machine learning algorithms and neural networks through projects and observed their behavior. We coded and ran a neural network, and reinforcement learning on the MNIST dataset. The Modified National Institute of Standards and Technology database, or “MNIST” is a dataset considered a standard for training machine learning technology, and it consists of thousands of images of written numbers from 0 to 9. </p>
+              <p class="center-text"> <img src="img/figure2.png" alt="Figure 2 - Training accuracy" class="center-img"><strong>Figure 2: Training Accuracy vs Number of Epochs</strong></p>
+              <p>Something interesting we learned in lab 1 with this dataset is that taking smaller steps toward higher accuracy in detecting the number values in the MNIST dataset has two main effects. It can smoothen the transition between iterations, which is a good thing, but it can also allow the neural network to become stuck in a local maximum. The nature of this data is inherently random, so it is possible and indeed plausible that if I were to make the step size too small, our network will get stuck on something, and we will not get the accuracy we could have gotten! Therefore, while a larger step side is rougher and more random, sometimes finding the right step size and the right parameters for your model needs to be experimented with because of the random nature of human data. </p>
+              <p class="center-text"><img src="img/figure3.png" alt="Figure 3 - Minibatch Accuracy and Loss" class="center-img"><strong>Figure 3: Plots of Accuracy and Loss for Minibatch = 50 </strong> </p>
+              <p>For federated learning in project 2, we observed the effect minibatch size has on the swiftness of our model’s convergence to an acceptable accuracy. The following is a conclusion we made in our federated learning laboratory discussing the effect of minibatch size and data heterogeneity: “Both MNIST and Fashion-MNIST benefit from increased data heterogeneity (access to multiple labels per device) and larger mini-batch sizes in federated learning. However, even with these optimizations, Fashion-MNIST struggles to achieve the same level of accuracy as MNIST. This suggests that the inherent complexity of the Fashion-MNIST dataset poses additional challenges that cannot be fully overcome by simply increasing data heterogeneity and mini-batch size.”</p>
+              <p>This class changed my perspective on both machine learning <i>and</i> communication networks. I learned how machine learning models are used in real time to make cellular networks more efficient. They can improve the performance of a network while the network continues to run, and working within limited bandwidth constraints.</p>
+              <p>Taking this course was a big <strong>leap of faith</strong> for me, but I’m incredibly glad I did. I now see machine learning as an integral part of wireless systems rather than an unrelated discipline. What started as a course outside my comfort zone has turned into a topic I actively seek to learn more about every day. I see machine learning and artificial intelligence at work, and I have seen wireless communication fundamentals that I learned <i>in this class</i> throughout the rest of my coursework.</p>
+            </div>
+          </div>
+        
+          <!-- EE 591 – Analog Integrated Circuits -->
+          <div class="reflection-card" onclick="toggleReflection(this)">
+            <img src="img/placeholder-analog.png" alt="EE 591" class="reflection-img">
+            <h3>EE 591: Analog Integrated Circuits</h3>
+            <p class="summary">Linux-based circuit design and hands-on Cadence tools helped deepen my understanding of analog systems.</p>
+            <div class="reflection-content">
+              <p>Taught by Professor Sahoo<br>
+              Analog electronics are the foundation of modern computing, and the birthplace of computing itself...</p>
+              <p><strong>Figure 4:</strong> <img src="img/placeholder-analog-1.png" alt="Figure 4 - NMOS High Swing Cascode" class="placeholder-img"></p>
+              <p>... At work I see engineers who can take one look at an IV curve and know exactly how a design improves over its predecessor...</p>
+              <p><strong>Figure 5:</strong> <img src="img/placeholder-analog-2.png" alt="Figure 5 - Cascode Characteristics" class="placeholder-img"></p>
+              <p>... Courses like these are tools on my toolbelt I can use in the future when it comes to design and analysis.</p>
+            </div>
+          </div>
+        
+          <!-- EE 519 – Industrial Control Systems -->
+          <div class="reflection-card" onclick="toggleReflection(this)">
+            <img src="img/placeholder-controls.png" alt="EE 519" class="reflection-img">
+            <h3>EE 519: Industrial Control Systems</h3>
+            <p class="summary">Mathematical modeling and system dynamics sparked a lasting passion for control engineering.</p>
+            <div class="reflection-content">
+              <p>Taught by Professor Luis Herrera<br>
+              I registered for EE 519 while working at Moog, Inc. for the summer. Many of my colleagues emphasized the importance of control systems in engineering...</p>
+              <p><strong>Figure 6:</strong> <img src="img/placeholder-controls-1.png" alt="Figure 6 - State Space System" class="placeholder-img"></p>
+              <p>...I recently accepted a job in controls!</p>
+            </div>
+          </div>
+        
+          <!-- EE 553 – Microelectronics Fabrication Lab -->
+          <div class="reflection-card" onclick="toggleReflection(this)">
+            <img src="img/placeholder-fab.png" alt="EE 553" class="reflection-img">
+            <h3>EE 553: Microelectronics Fabrication Lab</h3>
+            <p class="summary">Cleanroom experience and hands-on fabrication of silicon devices shaped my view of modern electronics.</p>
+            <div class="reflection-content">
+              <p>Taught by Professor Huamin Li<br>
+              This class was unique in that it was just as much an experience as it was an academic pursuit...</p>
+              <p><strong>Figure 7:</strong> <img src="img/placeholder-fab-1.png" alt="Figure 7 - Cutting silicon" class="placeholder-img"></p>
+              <p><strong>Figure 8:</strong> <img src="img/placeholder-fab-2.png" alt="Figure 8 - Gold coating gradient" class="placeholder-img"></p>
+              <p><strong>Figure 9:</strong> <img src="img/placeholder-fab-3.png" alt="Figure 9 - Gold nanoparticles" class="placeholder-img"></p>
+              <p><strong>Figure 10:</strong> <img src="img/placeholder-fab-4.png" alt="Figure 10 - Alexander and Marcus" class="placeholder-img"></p>
+              <p>...It’s not just something to put on a resume—it’s something that fundamentally shaped my understanding of electronics.</p>
+            </div>
+          </div>
+        
+        </div>
+        
 
 </div>
 
