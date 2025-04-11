@@ -3,6 +3,50 @@ function toggleDarkMode() {
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 }
 
+// 🔄 Fancy AJAX Form Submission with Loading, Success, and Error Handling
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("success-message");
+    const errorMessage = document.getElementById("error-message");
+    const loadingSpinner = document.getElementById("loading-spinner");
+  
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault(); // ⛔ Prevent normal form submission
+  
+        // Reset all messages
+        successMessage.classList.add("hidden-section");
+        errorMessage.classList.add("hidden-section");
+  
+        // Show spinner
+        loadingSpinner.classList.remove("hidden-section");
+  
+        const formData = new FormData(form);
+  
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+  
+          loadingSpinner.classList.add("hidden-section"); // Hide spinner
+  
+          if (response.ok) {
+            form.reset(); // Clear form inputs
+            successMessage.classList.remove("hidden-section"); // ✅ Show success
+          } else {
+            errorMessage.classList.remove("hidden-section"); // ❌ Show error
+          }
+        } catch (err) {
+          loadingSpinner.classList.add("hidden-section");
+          errorMessage.classList.remove("hidden-section");
+        }
+      });
+    }
+  });
+  
+
 // Collapse other details when one is opened
 document.querySelectorAll('details').forEach((detail) => {
     detail.addEventListener('toggle', function () {
