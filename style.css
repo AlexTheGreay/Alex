@@ -738,3 +738,18 @@ details[open] summary ~ * {
 .dark-mode .banner-image img {
   filter: brightness(85%);
 }
+
+.button-link {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #b71c1c;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #8e1717;
+}

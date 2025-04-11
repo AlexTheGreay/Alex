@@ -12,17 +12,7 @@
 
   <link rel="stylesheet" href="./style.css" />
   <style>
-    .red-banner {
-      width: 100%;
-      background-color: #b71c1c;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      border-radius: 0 0 40px 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+
 
     .experience-section {
       display: flex;
@@ -33,10 +23,10 @@
     }
 
     .experience-header img {
-      max-width: 600px;
+      max-width: 400px;
       width: 100%;
       object-fit: contain;
-      margin-bottom: -30px;
+      margin-bottom: -20px;
     }
 
     .experience-bubble {
@@ -44,7 +34,7 @@
       justify-content: center;
       align-items: stretch;
       flex-wrap: nowrap;
-      gap: 40px;
+      gap: 30px;
       max-width: 1100px;
     }
 
@@ -57,7 +47,7 @@
     }
 
     .experience-bubble img.bubble-img {
-      width: 50%;
+      width: 48%;
       height: auto;
       border-radius: 16px;
       object-fit: cover;
@@ -100,7 +90,6 @@
   <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 </div>
 
-<div class="red-banner">Integrated Learning</div>
 
 <div class="container">
   <section>
@@ -113,7 +102,15 @@
         <img class="bubble-img" src="proj/fp.png" alt="Fisher Price Debug Tool">
         <div class="bubble-text">
           <h3>Fisher Price: Debug Tool</h3>
-          <p>As part of the Thomas the Tank Engine team, I developed a scanning debug tool for the embedded systems inside the toys. This tool dramatically simplified debugging and helped QA technicians isolate errors in the toy firmware.</p>
+          <p>As part of the Thomas the Tank Engine team, I developed a scanning debug tool for the embedded systems inside the toys. I made this tool to simplify data collection and help QA technicians isolate problems in returned toys or toys in-store.</p>
+        </div>
+      </div>
+
+      <div class="experience-bubble left">
+        <img class="bubble-img" src="proj/fp2.jpg" alt="Thomas Toy">
+        <div class="bubble-text">
+          <h3>Thomas the Tank: Firmware Analysis</h3>
+          <p>My main project at fisher price was working with the thomas team to create a product reading tool. I cannot go into specifics, but it was an honor to work on a toy that I spent my childhood playing with</p>
         </div>
       </div>
 
@@ -121,8 +118,15 @@
       <div class="experience-bubble left">
         <img class="bubble-img" src="proj/Seahawk2.jpg" alt="Moog Helicopter">
         <div class="bubble-text">
-          <h3>Moog Inc. – Helicopter Power Modules</h3>
-          <p>While the specifics are under NDA, I worked on modules used in Black Hawk and Sea Hawk helicopters. It was a proud moment to contribute engineering expertise to platforms of this scale and national importance. Tasks included simulation, layout review, and lab validation.</p>
+          <h3>Moog Inc. – Design, Analysis & Power Flow</h3>
+          <p>While the specifics are under NDA, I worked on modules used in Black Hawk and Sea Hawk helicopters. It was a proud moment to contribute engineering to platforms of this scale and national importance. Tasks are non-discloseable but I can show you epic pictures of the choppers.</p>
+        </div>
+      </div>
+
+      <div class="experience-bubble right">
+        <img class="bubble-img" src="proj/Seahawk.png" alt="Moog Helicopter 2">
+        <div class="bubble-text">
+          <p>At my MOOG internship I got a good mix of designing power modules, statistical analysis, and troubleshooting real problems with aircraft electronics.</p>
         </div>
       </div>
 
@@ -147,21 +151,52 @@
         <img class="bubble-img" src="proj/alexserver.png" alt="NAS Build">
         <div class="bubble-text">
           <h3>Home Server Project</h3>
-          <p>I designed and built a custom Network Attached Storage system using an IBM System x3650 M3 server. This project challenged my understanding of hardware interfaces, RAID configurations, and Linux-based file system management. It has become an essential part of my home lab.</p>
+          <p>I designed and built a custom Network Attached Storage system using an IBM System x3650 M3 server. This project challenged my understanding of hardware interfaces, RAID configurations, and Linux-based file system management. Once finished it will become an essential part of my home lab.</p>
         </div>
       </div>
 
-      <!-- 🔻 TEMPLATE: Copy below block to add more experiences -->
-      <!--
-      <div class="experience-header"><img src="proj/companylogo.png" alt="Company Logo"></div>
       <div class="experience-bubble left">
-        <img class="bubble-img" src="proj/yourimage.jpg" alt="Your Project">
+        <img class="bubble-img" src="proj/autowater.jpg" alt="Autowater">
         <div class="bubble-text">
-          <h3>Company / Project Title</h3>
-          <p>Short description of what you did, what you learned, and any tools or skills used.</p>
+          <h3>Auto Watering System (with Sarah Hennessy)</h3>
+          <p>I collaborated with Sarah Hennessy on a fully automated watering project using sensors and pumps. The system dynamically adjusts based on moisture readings. We prototyped with Arduino and integrated circuit relays.</p>
+          <p>
+            <a href="https://devpost.com/software/garden-of-amnesia" target="_blank" class="button-link">
+              🎮 View on Devpost
+            </a>
+          </p>
+          
         </div>
       </div>
-      -->
+
+
+
+
+      <div class="experience-bubble right">
+        <iframe class="bubble-img" src="https://www.youtube.com/watch?v=z4QZwApVT2w&ab_channel=Marcus" frameborder="0" allowfullscreen></iframe>
+        <div class="bubble-text">
+          <h3>Code Red: Red Alert</h3>
+          <p>Red Alert was a fast-paced Devpost competition entry with real-time sensor feedback and a graphical interface. It demonstrates teamwork in rapid prototyping and user-centric embedded design.</p>
+          <p>
+            <a href="https://devpost.com/software/red-alert" target="_blank" class="button-link">
+              🚨 View Red Alert on Devpost
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="experience-bubble left">
+        <iframe class="bubble-img" src="https://www.youtube.com/embed/W2HEEkZBhw4" frameborder="0" allowfullscreen></iframe>
+        <div class="bubble-text">
+          <h3>Code Red: Big Transistor Security</h3>
+          <p>This Devpost project explored novel concepts in embedded hardware verification and trust, combining microcontroller prototyping with digital logic techniques to build a security-themed humorous demo.</p>
+          <p>
+            <a href="https://devpost.com/software/big-transistor-security" target="_blank" class="button-link">
+              🔐 View Big Transistor Security on Devpost
+            </a>
+          </p>
+        </div>
+      </div>
 
     </div>
   </section>
