@@ -528,8 +528,8 @@ details[open] summary ~ * {
   border: 1px solid #000000; /* Blue outline */
   border-radius: 10px;
   font-weight: bold;
-  color: #000000;
-  background-color: #007bff; /* Blue fill */
+  color: #c4c4c4;
+  background-color: #007bffa6; /* Blue fill */
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -539,9 +539,9 @@ details[open] summary ~ * {
 
 .corner-link:hover {
   transform: translateY(-2px);
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0c79ee; /* Darker blue on hover */
   border-color: #0056b3;
-  color: var(--section-bg);
+  color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
