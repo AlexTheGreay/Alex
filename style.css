@@ -77,7 +77,7 @@ footer {
 
 .toggle-container {
   position: absolute;
-  top: 190px;
+  top: 130px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10; /* Puts it on top */
