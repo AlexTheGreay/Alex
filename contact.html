@@ -39,45 +39,53 @@
 
 <div class="container">
 
-    <section>
-        <h2>Contact Me</h2>
-        <a href="https://www.linkedin.com/in/alex-james-francisco/" target="_blank"><strong>My Linkedin</strong></a> 
-     
-        <!-- ✅ Success message -->
-        <div id="success-message" class="hidden-section">
-          <p>✅ Thank you! Your message has been sent.</p>
-        </div>
-      
-        <!-- ❌ Error message -->
-        <div id="error-message" class="hidden-section">
-          <p>⚠️ Oops! Something went wrong. Please try again later.</p>
-        </div>
-      
-        <!-- 🔄 Loading spinner -->
-        <div id="loading-spinner" class="hidden-section">
-          <p><i class="fas fa-spinner fa-spin"></i> Sending your message...</p>
-        </div>
-      
-        <!-- 💬 Contact Form -->
-        <form id="contactForm" action="https://formspree.io/f/xaneaazw" method="POST" class="contact-form">
-      
-          <!-- 👤 Name -->
-          <label for="name"><i class="fas fa-user"></i> Name:</label>
-          <input type="text" id="name" name="name" required>
-      
-          <!-- 📧 Email -->
-          <label for="email"><i class="fas fa-envelope"></i> Email:</label>
-          <input type="email" id="email" name="_replyto" required>
-      
-          <!-- 📝 Message -->
-          <label for="message"><i class="fas fa-comment-alt"></i> Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-      
-          <!-- 📤 Submit -->
-          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-      
-        </form>
-      </section>
+  <section class="citations-section">
+    <h2>Contact Me</h2>
+  
+    <!-- 🔗 LinkedIn Section -->
+    <div class="centered-contact">
+      <p style="font-size: 1.2rem; margin-bottom: 10px;">
+        Find me on LinkedIn <span style="font-size: 1.5rem;"></span>
+      </p>
+      <a href="https://www.linkedin.com/in/alex-james-francisco/" target="_blank" class="linkedin-logo-link">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="linkedin-logo" style="width: 80px; height: 80px;">
+      </a>
+    </div>
+  
+    <!-- ✅ Success message -->
+    <div id="success-message" class="hidden-section">
+      <p>✅ Thank you! Your message has been sent.</p>
+    </div>
+  
+    <!-- ❌ Error message -->
+    <div id="error-message" class="hidden-section">
+      <p>⚠️ Oops! Something went wrong. Please try again later.</p>
+    </div>
+  
+    <!-- 🔄 Loading spinner -->
+    <div id="loading-spinner" class="hidden-section">
+      <p><i class="fas fa-spinner fa-spin"></i> Sending your message...</p>
+    </div>
+  
+    <!-- ✉️ Form Intro -->
+    <div style="text-align: center; margin: 40px 0 10px;">
+      <p style="font-size: 1.2rem;">Or fill out this form to send me an email:</p>
+    </div>
+  
+    <!-- 💬 Contact Form -->
+    <form id="contactForm" action="https://formspree.io/f/xaneaazw" method="POST" class="contact-form">
+      <label for="name"><i class="fas fa-user"></i> Name:</label>
+      <input type="text" id="name" name="name" required>
+  
+      <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+      <input type="email" id="email" name="_replyto" required>
+  
+      <label for="message"><i class="fas fa-comment-alt"></i> Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+  
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
+  </section>
       
       
 </div>
