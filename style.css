@@ -753,3 +753,7 @@ details[open] summary ~ * {
 .button-link:hover {
   background-color: #8e1717;
 }
+
+html {
+  overflow-y: scroll;
+}
