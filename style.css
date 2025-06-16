@@ -820,6 +820,11 @@ html {
   margin-top: 20px;
 }
 
+.non-centered-contact {
+  text-align: right;
+  margin-top: 0px;
+}
+
 .linkedin-logo {
   width: 80px;
   height: 80px;
