@@ -822,10 +822,10 @@ html {
 
 .non-centered-contact {
   text-align: right;
-  margin-top: -20px;
+  margin-top: -70px;
   position: absolute;
   top: 100px;
-  left: 25%;
+  left: 75%;
   transform: translateX(-50%);
   z-index: 10; /* Puts it on top */
     
